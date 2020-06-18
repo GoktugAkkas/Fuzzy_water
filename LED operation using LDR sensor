@@ -1,0 +1,49 @@
+
+#define led 3
+#define led 4
+#define led 5       //identifying the pins to which the leds are connected
+#define led 6
+#define led 7
+#define buzzer 8   //identifying the pins to which the buzzer are connected
+
+
+void setup() {
+
+    pinMode(3,OUTPUT);   
+    pinMode(4,OUTPUT);
+    pinMode(5,OUTPUT);
+    pinMode(6,OUTPUT);     
+    pinMode(7,OUTPUT);
+    pinMode(8,OUTPUT);
+ 
+    
+    Serial.begin(9600);
+
+}
+
+void loop() {
+
+  int data = analogRead(A0);
+  Serial.println(data);
+  delay(50);
+  
+
+  if(data > 700){
+    digitalWrite(3,LOW);
+     digitalWrite(4,LOW);
+      digitalWrite(5,LOW);
+      digitalWrite(6,LOW);
+     digitalWrite(7,LOW);
+      digitalWrite(8,LOW);
+      
+  }
+
+
+  if(data < 500){
+    digitalWrite(3,HIGH);
+     digitalWrite(4,HIGH);
+      digitalWrite(5,HIGH);
+       digitalWrite(6,HIGH);
+     digitalWrite(7,HIGH);
+      digitalWrite(8,HIGH);
+     }
